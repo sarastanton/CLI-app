@@ -25,7 +25,9 @@ puts "Which yarn would you like to learn more about?"
     @@yarn_names.each.with_index(1) do |name, number|
       puts "#{number}. #{name}"
     end
-
+    puts "Enter a number:"
+    input = gets.chomp.to_i
+    binding.pry
   end
 
   self.scrape_knitpicks
