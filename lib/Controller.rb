@@ -9,7 +9,7 @@ class Controller
       puts "Sorry - I don't understand. Please enter 1, 2, 3, or exit:"
       input = gets.chomp.to_s
     end
-    
+
     case input
     when "1"
       puts "you chose 1"  #testing functionality
