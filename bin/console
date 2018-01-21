@@ -17,5 +17,5 @@ require "open-uri"
 
 require_relative '../lib/Controller.rb'
 require_relative '../lib/knitpickr.rb'
-require_relative '../lib/Scraper.rb'
+require_relative '../lib/Scraper2.rb'
 require_relative '../lib/Yarn.rb'
