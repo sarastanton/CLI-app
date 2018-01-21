@@ -9,11 +9,11 @@ class Scraper
 
   attr_accessor :yarn, :doc
 
-@@all_names = []
-@@all_fibers = []
-@@all_weights = []
-@@all_yarns = []
-@@sale_items = []
+  @@all_names = []
+  @@all_fibers = []
+  @@all_weights = []
+  @@all_yarns = []
+  @@sale_items = []
 
   # def initialize
   #   @yarn = Yarn.new
@@ -46,8 +46,29 @@ class Scraper
     end
   end
 
+  def self.all_names
+    @@all_names.uniq
+  end
+
+  def self.all_fibers
+  @@all_fibers.uniq
+    end
+
+  def self.all_weights
+    @@all_weights.uniq
+  end
+
+  def self.all_yarns
+    @@all_yarns.uniq
+  end
+
+  def self.sale_items
+    @@sale_items.uniq
+  end
+
+
   make_yarns
 
-  binding.pry
+  # binding.pry
 
 end

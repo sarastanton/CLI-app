@@ -12,14 +12,14 @@ class Controller
 
     case input
     when "1"
-      puts "Here is a list of all yarn weight options - to learn more, enter the number listed below:"  #testing functionality
-      @@all_weights.each_with_index {|x, i| puts "#{i+1}. #{x}"}
+      puts "Here is a list of all yarn weight options - to learn more, enter the number listed below:"
+      Scraper.all_weights.each_with_index {|x, i| puts "#{i+1}. #{x}"}
     when "2"
-      puts "Here is a list of all yarn fiber content options - to learn more, enter the number listed below:"  #testing functionality
-      @@all_fibers.each_with_index {|x, i| puts "#{i+1}. #{x}"}
+      puts "Here is a list of all yarn fiber content options - to learn more, enter the number listed below:"
+      Scraper.all_fibers.each_with_index {|x, i| puts "#{i+1}. #{x}"}
     when "3"
-      puts "Here is a list of all yarn names - to learn more, enter the number listed below:"  #testing functionality
-      @@all_names.each_with_index {|x, i| puts "#{i+1}. #{x}"}
+      puts "Here is a list of all yarn names - to learn more, enter the number listed below:"
+      Scraper.all_names.each_with_index {|x, i| puts "#{i+1}. #{x}"}
 
     when "exit"
       puts "Ok, see you later!"
