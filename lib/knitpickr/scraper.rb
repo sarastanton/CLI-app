@@ -33,7 +33,7 @@ class Scraper
       y.fiber = yarn.css(".yarnWeight").first.text
         @@all_fibers << y.fiber
       y.price = yarn.css(".costSmall").first.text.strip
-        if yarn.css(".listItemStatusTags").text == "SaleSaleNew"
+        if yarn.css(".listItemStatusTags").text == "Sale"
            y.sale = true
         end
       y
@@ -56,9 +56,9 @@ class Scraper
     @@all_yarns
   end
 
-  def self.sale_items
-    @@sale_items.uniq
-  end
+  # def self.sale_items
+  #   @@sale_items.uniq
+  # end
 
   make_yarns
 

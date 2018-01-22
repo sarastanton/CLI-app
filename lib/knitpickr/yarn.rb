@@ -27,6 +27,7 @@ class Yarn
 
   def self.show_details(selection)
     selection.each do |yarn|
+      puts
       puts "Yarn name: #{yarn.name}"
       puts "Yarn weight: #{yarn.weight}"
       puts "Fiber content: #{yarn.fiber}"
@@ -35,7 +36,6 @@ class Yarn
         puts "On sale!"
       end
       puts "___________________________"
-      puts
     end
   end
 

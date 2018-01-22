@@ -15,7 +15,7 @@ require "open-uri"
 # require "irb"
 # IRB.start(__FILE__)
 
-require_relative '../lib/Controller.rb'
+require_relative '../lib/controller.rb'
 require_relative '../lib/knitpickr.rb'
-require_relative '../lib/Scraper2.rb'
-require_relative '../lib/Yarn.rb'
+require_relative '../lib/scraper.rb'
+require_relative '../lib/yarn.rb'
