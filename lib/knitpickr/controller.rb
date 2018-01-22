@@ -58,6 +58,7 @@ class Controller
       self.greeting
     when "n"
       puts "Ok, see you later!"
+    end
 
   end
 
@@ -94,6 +95,7 @@ class Controller
       self.greeting
     when "n"
       puts "Ok, see you later!"
+    end
 
   end
 
@@ -121,15 +123,17 @@ class Controller
         puts "Hmm, I don't see that number on the list. Let's try this again..."
         self.browse_by_name
     end
+
+    puts "Browse again? (Y/N)"
+    input = gets.chomp.downcase
+
+    case input
+    when "y"
+      self.greeting
+    when "n"
+      puts "Ok, see you later!"
+    end
+
   end
-
-  puts "Browse again? (Y/N)"
-  input = gets.chomp.downcase
-
-  case input
-  when "y"
-    self.greeting
-  when "n"
-    puts "Ok, see you later!"
 
 end
