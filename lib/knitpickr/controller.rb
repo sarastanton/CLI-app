@@ -24,17 +24,46 @@ class Controller
   end
 
   def self.browse_by_weight
-    puts "Here is a list of all yarn weight options:"
-    Scraper.all_weights.each_with_index {|x, i| puts "#{i+1}. #{x}"}
+    puts "Here is a list of all yarn weight options - to learn more, enter the number listed below:"
+      Scraper.all_weights.each_with_index {|x, i| puts "#{i+1}. #{x}"}
     puts "Want to learn more? Enter a number from above. You can also enter 'list' to see the list again, or 'exit'."
 
-    input = gets.chomp.to_i
+    input = gets.chomp
+
+    until input.to_i != 0 || input == "exit" || input == "list"
+      puts "Sorry - I don't understand. Please enter '1', '2', '3', or 'exit':"
+      input = gets.chomp
+    end
+
+    if input == "exit"
+      puts "Ok, see you later!"
+    elsif input ==  "list"
+      self.browse_by_weight
+    elsif input.to_i > 0 && input.to_i <= Scraper.all_weights.count
+
+    index = input.to_i - 1
+
+    selection = Yarn.find_by_weight(Scraper.all_weights[index])
+    Yarn.show_details(selection)
+      else
+        puts "Hmm, I don't see that number on the list. Let's try this again..."
+        self.browse_by_weight
+    end
+
+    puts "Browse again? (Y/N)"
+    input = gets.chomp.downcase
+
+    case input
+    when "y"
+      self.greeting
+    when "n"
+      puts "Ok, see you later!"
 
   end
 
   def self.browse_by_fiber
     puts "Here is a list of all yarn fiber content options - to learn more, enter the number listed below:"
-    Scraper.all_fibers.each_with_index {|x, i| puts "#{i+1}. #{x}"}
+      Scraper.all_fibers.each_with_index {|x, i| puts "#{i+1}. #{x}"}
     puts "Want to learn more? Enter a number from above. You can also enter 'list' to see the list again, or 'exit'."
 
     input = gets.chomp
@@ -48,37 +77,59 @@ class Controller
         puts "Ok, see you later!"
       elsif input ==  "list"
         self.browse_by_fiber
-      elsif input.to_i != 0 && Scraper.all_fibers.count
-        index = input.to_i + 1
-      puts Yarn.find_by_fiber(Scraper.all_fibers[index])
-        # show_details(selection)
+      elsif input.to_i > 0 && input.to_i <= Scraper.all_fibers.count
+        index = input.to_i - 1
+      selection = Yarn.find_by_fiber(Scraper.all_fibers[index])
+      Yarn.show_details(selection)
       else
         puts "Hmm, I don't see that number on the list. Let's try this again..."
         self.browse_by_fiber
     end
 
+    puts "Browse again? (Y/N)"
+    input = gets.chomp.downcase
+
+    case input
+    when "y"
+      self.greeting
+    when "n"
+      puts "Ok, see you later!"
+
   end
 
   def self.browse_by_name
     puts "Here is a list of all yarn names - to learn more, enter the number listed below:"
+    Scraper.all_names.each_with_index {|x, i| puts "#{i+1}. #{x}"}
     puts "Want to learn more? Enter a number from above. You can also enter 'list' to see the list again, or 'exit'."
-    input = gets.chomp.to_i
 
-  end
+    input = gets.chomp
 
-  def show_details(selection)
-    selection.each do |yarn|
-      puts "Yarn name: #{yarn.name}"
-      puts "Yarn weight: #{yarn.weight}"
-      puts "Fiber content: #{yarn.fiber}"
-      puts "Yardage: #{yarn.yardage}"
-      puts "Price: #{yarn.price}"
-      if sale
-        puts "On sale!"
-      end
-      puts "___________________________"
+    until input.to_i != 0 || input == "exit" || input == "list"
+      puts "Sorry - I don't understand. Please enter '1', '2', '3', or 'exit':"
+      input = gets.chomp
+    end
+
+    if input == "exit"
+        puts "Ok, see you later!"
+      elsif input ==  "list"
+        self.browse_by_name
+      elsif input.to_i > 0 && input.to_i <= Scraper.all_names.count
+        index = input.to_i - 1
+      selection = Yarn.find_by_name(Scraper.all_names[index])
+      Yarn.show_details(selection)
+      else
+        puts "Hmm, I don't see that number on the list. Let's try this again..."
+        self.browse_by_name
     end
   end
 
-# self.greeting
+  puts "Browse again? (Y/N)"
+  input = gets.chomp.downcase
+
+  case input
+  when "y"
+    self.greeting
+  when "n"
+    puts "Ok, see you later!"
+
 end

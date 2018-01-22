@@ -53,13 +53,12 @@ class Scraper
   end
 
   def self.all_yarns
-    @@all_yarns.uniq
+    @@all_yarns
   end
 
   def self.sale_items
     @@sale_items.uniq
   end
-
 
   make_yarns
 
