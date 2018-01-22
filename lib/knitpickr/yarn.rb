@@ -3,7 +3,7 @@ require 'open-uri'
 require 'nokogiri'
 
 class Yarn
-  attr_accessor :name, :weight, :fiber, :price, :yardage, :sale, :id
+  attr_accessor :name, :weight, :fiber, :price, :yardage, :sale
 
 
   def initialize(name)
@@ -12,13 +12,18 @@ class Yarn
     @sale = nil
   end
 
-  def find_by_weight(weight)
+  def self.find_by_weight(weight)
+    Scraper.all_yarns.collect {|yarn| yarn.weight == weight}
+
   end
 
-  def find_by_name(name)
+  def self.find_by_name(name)
+    Scraper.all_yarns.collect {|yarn| yarn.name == name}
+
   end
 
-  def find_by_fiber(fiber)
+  def self.find_by_fiber(fiber)
+    Scraper.all_yarns.collect {|yarn| yarn.fiber == fiber}
   end
 
 

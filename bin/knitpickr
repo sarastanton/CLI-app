@@ -2,4 +2,4 @@
 
 require_relative '../config/environment'
 
-Knitpickr::controller.new.greeting
+Controller.greeting
