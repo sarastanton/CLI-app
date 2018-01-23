@@ -1,4 +1,8 @@
-require "knitpickr/version"
+module Knitpickr
+end
+
+require_relative '../config/environment'
+
 
 # What I want my program to do:
 #
