@@ -19,6 +19,7 @@ class Controller
         browse_by_name
       when "exit"
         puts "Ok, see you later!"
+        return nil
     end
 
   end
@@ -37,6 +38,7 @@ class Controller
 
     if input == "exit"
       puts "Ok, see you later!"
+      return nil
     elsif input ==  "list"
       self.browse_by_weight
     elsif input.to_i > 0 && input.to_i <= Scraper.all_weights.count
@@ -58,6 +60,7 @@ class Controller
       self.greeting
     when "n"
       puts "Ok, see you later!"
+      return nil
     end
 
   end
@@ -76,6 +79,7 @@ class Controller
 
     if input == "exit"
         puts "Ok, see you later!"
+        return nil
       elsif input ==  "list"
         self.browse_by_fiber
       elsif input.to_i > 0 && input.to_i <= Scraper.all_fibers.count
@@ -95,6 +99,7 @@ class Controller
       self.greeting
     when "n"
       puts "Ok, see you later!"
+      return nil
     end
 
   end
@@ -113,6 +118,7 @@ class Controller
 
     if input == "exit"
         puts "Ok, see you later!"
+        return nil
       elsif input ==  "list"
         self.browse_by_name
       elsif input.to_i > 0 && input.to_i <= Scraper.all_names.count
@@ -132,6 +138,7 @@ class Controller
       self.greeting
     when "n"
       puts "Ok, see you later!"
+      return nil
     end
 
   end
