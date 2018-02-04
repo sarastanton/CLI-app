@@ -83,11 +83,11 @@ class Controller
         puts "Ok, see you later!"
         return nil
       elsif input ==  "list"
-        self.browse_by_name
+        self.browse_by_fiber
       elsif input.to_i > 0 && input.to_i <= Scraper.all_fibers.count
         index = input.to_i - 1
-      selection = Yarn.find_by_name(Scraper.all_fibers[index])
-      Yarn.show_details(selection)
+        selection = Yarn.find_by_fiber(Scraper.all_fibers[index])
+        Yarn.show_details(selection)
       else
         puts "Hmm, I don't see that number on the list. Let's try this again..."
         self.browse_by_fiber
