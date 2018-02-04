@@ -13,7 +13,7 @@ class Scraper
   @@all_fibers = []
   @@all_weights = []
   @@all_yarns = []
-  @@sale_items = []
+  @@all_sale = []
 
   def self.scrape_yarns
     @doc = Nokogiri::HTML(open("http://www.knitpicks.com/yarns/All_Knit_Picks_Yarn__L300198.html?showAll=yes"))
@@ -35,6 +35,7 @@ class Scraper
       y.price = yarn.css(".costSmall").first.text.strip
         if yarn.css(".listItemStatusTags").text == "Sale"
            y.sale = true
+           @@all_sale << y
         end
       y
     end
@@ -56,9 +57,9 @@ class Scraper
     @@all_yarns
   end
 
-  # def self.sale_items
-  #   @@sale_items.uniq
-  # end
+  def self.all_sale
+    @@all_sale.uniq
+  end
 
   make_yarns
 

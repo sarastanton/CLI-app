@@ -13,30 +13,33 @@ class Yarn
 
   def self.find_by_weight(weight)
     Scraper.all_yarns.select {|yarn| yarn.weight == weight}
-
   end
 
   def self.find_by_name(name)
     Scraper.all_yarns.select {|yarn| yarn.name == name}
-
   end
 
   def self.find_by_fiber(fiber)
     Scraper.all_yarns.select {|yarn| yarn.fiber == fiber}
   end
 
-  def self.show_details(selection)
-    selection.each do |yarn|
-      puts
-      puts "Yarn name: #{yarn.name}"
-      puts "Yarn weight: #{yarn.weight}"
-      puts "Fiber content: #{yarn.fiber}"
-      puts "Price: #{yarn.price}"
-      if yarn.sale
-        puts "On sale!"
-      end
-      puts "___________________________"
-    end
+  def self.find_by_sale(yarn)
+    Scraper.all_yarns.select {|yarn| yarn.sale == true}
   end
+
+    def self.show_details(selection)
+     selection.each do |yarn|
+       puts
+       puts "Yarn name: #{yarn.name}"
+       puts "Yarn weight: #{yarn.weight}"
+       puts "Fiber content: #{yarn.fiber}"
+       puts "Price: #{yarn.price}"
+       if yarn.sale
+         puts "On sale!"
+       end
+       puts "___________________________"
+     end
+
+   end
 
 end
