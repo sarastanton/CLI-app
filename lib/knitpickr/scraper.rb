@@ -5,7 +5,7 @@ require 'nokogiri'
 require_relative "../knitpickr/yarn.rb"
 
 
-class Scraper
+class Knitpickr::Scraper
 
   attr_accessor :yarn, :doc
 
@@ -24,7 +24,7 @@ class Scraper
     all_yarns = @doc.css("div.listItem.book")
 
     all_yarns.each do |yarn|
-      y = Yarn.new(yarn.css(".titleSmall").first.attribute("title").value)
+      y = Knitpickr::Yarn.new(yarn.css(".titleSmall").first.attribute("title").value)
         @@all_yarns << y
       y.name = yarn.css(".titleSmall").first.attribute("title").value
         @@all_names << y.name
@@ -62,7 +62,5 @@ class Scraper
   end
 
   make_yarns
-
-  # binding.pry
 
 end

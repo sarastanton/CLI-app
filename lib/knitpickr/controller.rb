@@ -1,4 +1,4 @@
-class Controller
+class Knitpickr::Controller
 
   def self.greeting
     puts "Hello! Would you like to browse by [1] yarn weight, [2] fiber content, [3] yarn name, or [4] all sale items? Please enter '1', '2', '3', or '4':"
@@ -28,7 +28,7 @@ class Controller
 
   def self.browse_by_weight
     puts "Here is a list of all yarn weight options - to learn more, enter the number listed below:"
-      Scraper.all_weights.each_with_index {|x, i| puts "#{i+1}. #{x}"}
+      Knitpickr::Scraper.all_weights.each_with_index {|x, i| puts "#{i+1}. #{x}"}
     puts "Want to learn more? Enter a number from above. You can also enter 'list' to see the list again, or 'exit'."
 
     input = gets.chomp
@@ -43,12 +43,12 @@ class Controller
       return nil
     elsif input ==  "list"
       self.browse_by_weight
-    elsif input.to_i > 0 && input.to_i <= Scraper.all_weights.count
+    elsif input.to_i > 0 && input.to_i <= Knitpickr::Scraper.all_weights.count
 
     index = input.to_i - 1
 
-    selection = Yarn.find_by_weight(Scraper.all_weights[index])
-    Yarn.show_details(selection)
+    selection = Knitpickr::Yarn.find_by_weight(Knitpickr::Scraper.all_weights[index])
+    Knitpickr::Yarn.show_details(selection)
       else
         puts "Hmm, I don't see that number on the list. Let's try this again..."
         self.browse_by_weight
@@ -69,7 +69,7 @@ class Controller
 
   def self.browse_by_fiber
     puts "Here is a list of all yarn fiber content options - to learn more, enter the number listed below:"
-      Scraper.all_fibers.each_with_index {|x, i| puts "#{i+1}. #{x}"}
+      Knitpickr::Scraper.all_fibers.each_with_index {|x, i| puts "#{i+1}. #{x}"}
     puts "Want to learn more? Enter a number from above. You can also enter 'list' to see the list again, or 'exit'."
 
     input = gets.chomp
@@ -84,10 +84,10 @@ class Controller
         return nil
       elsif input ==  "list"
         self.browse_by_fiber
-      elsif input.to_i > 0 && input.to_i <= Scraper.all_fibers.count
+      elsif input.to_i > 0 && input.to_i <= Knitpickr::Scraper.all_fibers.count
         index = input.to_i - 1
-        selection = Yarn.find_by_fiber(Scraper.all_fibers[index])
-        Yarn.show_details(selection)
+        selection = Knitpickr::Yarn.find_by_fiber(Knitpickr::Scraper.all_fibers[index])
+        Knitpickr::Yarn.show_details(selection)
       else
         puts "Hmm, I don't see that number on the list. Let's try this again..."
         self.browse_by_fiber
@@ -108,7 +108,7 @@ class Controller
 
   def self.browse_by_name
     puts "Here is a list of all yarn names - to learn more, enter the number listed below:"
-    Scraper.all_names.each_with_index {|x, i| puts "#{i+1}. #{x}"}
+    Knitpickr::Scraper.all_names.each_with_index {|x, i| puts "#{i+1}. #{x}"}
     puts "Want to learn more? Enter a number from above. You can also enter 'list' to see the list again, or 'exit'."
 
     input = gets.chomp
@@ -123,10 +123,10 @@ class Controller
         return nil
       elsif input ==  "list"
         self.browse_by_name
-      elsif input.to_i > 0 && input.to_i <= Scraper.all_names.count
+      elsif input.to_i > 0 && input.to_i <= Knitpickr::Scraper.all_names.count
         index = input.to_i - 1
-      selection = Yarn.find_by_name(Scraper.all_names[index])
-      Yarn.show_details(selection)
+      selection = Knitpickr::Yarn.find_by_name(Knitpickr::Scraper.all_names[index])
+      Knitpickr::Yarn.show_details(selection)
       else
         puts "Hmm, I don't see that number on the list. Let's try this again..."
         self.browse_by_name
@@ -147,7 +147,7 @@ class Controller
 
   def self.browse_sale
     puts "Here is a list of all yarn currently on sale - to learn more, enter the number listed below:"
-      Scraper.all_sale.each_with_index {|x, i| puts "#{i+1}. #{x.name} (#{x.price})"}
+      Knitpickr::Scraper.all_sale.each_with_index {|x, i| puts "#{i+1}. #{x.name} (#{x.price})"}
     puts "Want to learn more? Enter a number from above. You can also enter 'list' to see the list again, or 'exit'."
 
     input = gets.chomp
@@ -162,11 +162,11 @@ class Controller
       return nil
     elsif input ==  "list"
       self.browse_sale
-    elsif input.to_i > 0 && input.to_i <= Scraper.all_sale.count
+    elsif input.to_i > 0 && input.to_i <= Knitpickr::Scraper.all_sale.count
 
     index = input.to_i - 1
 
-    selection = Scraper.all_sale[index]
+    selection = Knitpickr::Scraper.all_sale[index]
     puts "Yarn name: #{selection.name}"
     puts "Yarn weight: #{selection.weight}"
     puts "Fiber content: #{selection.fiber}"

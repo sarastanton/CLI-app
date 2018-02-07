@@ -7,15 +7,8 @@ require "knitpickr"
 # with your gem easier. You can also use a different console, if you like.
 
 # (If you use this, don't forget to add pry to your Gemfile!)
-require "pry"
-require "nokogiri"
-require "open-uri"
+
 # Pry.start
 
 # require "irb"
 # IRB.start(__FILE__)
-
-require_relative '../lib/controller.rb'
-require_relative '../lib/knitpickr.rb'
-require_relative '../lib/scraper.rb'
-require_relative '../lib/yarn.rb'

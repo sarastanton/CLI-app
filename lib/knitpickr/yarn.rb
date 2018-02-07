@@ -2,7 +2,7 @@ require 'pry'
 require 'open-uri'
 require 'nokogiri'
 
-class Yarn
+class Knitpickr::Yarn
   attr_accessor :name, :weight, :fiber, :price, :sale
 
 
@@ -12,19 +12,19 @@ class Yarn
   end
 
   def self.find_by_weight(weight)
-    Scraper.all_yarns.select {|yarn| yarn.weight == weight}
+    Knitpickr::Scraper.all_yarns.select {|yarn| yarn.weight == weight}
   end
 
   def self.find_by_name(name)
-    Scraper.all_yarns.select {|yarn| yarn.name == name}
+    Knitpickr::Scraper.all_yarns.select {|yarn| yarn.name == name}
   end
 
   def self.find_by_fiber(fiber)
-    Scraper.all_yarns.select {|yarn| yarn.fiber == fiber}
+    Knitpickr::Scraper.all_yarns.select {|yarn| yarn.fiber == fiber}
   end
 
   def self.find_by_sale(yarn)
-    Scraper.all_yarns.select {|yarn| yarn.sale == true}
+    Knitpickr::Scraper.all_yarns.select {|yarn| yarn.sale == true}
   end
 
     def self.show_details(selection)
