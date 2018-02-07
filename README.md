@@ -4,25 +4,13 @@ This Ruby Gem allows the user to browse yarn sold by Knitpicks (www.knitpicks.co
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'knitpickr'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install knitpickr
 
 ## Usage
 
 Enter the following to get started:
 
-```$ knitpickr
+    $ knitpickr
 
 ## Development
 
