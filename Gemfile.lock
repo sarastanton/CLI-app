@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    knitpickr-cli-app (0.1.0)
+    knitpickr (0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -35,7 +35,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  knitpickr-cli-app!
+  knitpickr!
   nokogiri
   pry
   rake (~> 10.0)
