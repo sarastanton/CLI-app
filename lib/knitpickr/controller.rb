@@ -176,7 +176,7 @@ class Knitpickr::Controller
     end
       else
         puts "Hmm, I don't see that number on the list. Let's try this again..."
-        self.browse_by_sale
+        self.browse_sale
     end
 
     puts "Browse again? (Y/N)"
