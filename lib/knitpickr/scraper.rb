@@ -1,9 +1,4 @@
-require 'pry'
-require 'open-uri'
-require 'nokogiri'
-
 require_relative "../knitpickr/yarn.rb"
-
 
 class Knitpickr::Scraper
 

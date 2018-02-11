@@ -1,7 +1,3 @@
-require 'pry'
-require 'open-uri'
-require 'nokogiri'
-
 class Knitpickr::Yarn
   attr_accessor :name, :weight, :fiber, :price, :sale
 
