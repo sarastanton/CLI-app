@@ -34,7 +34,7 @@ class Knitpickr::Controller
     input = gets.chomp
 
     until input.to_i != 0 || input == "exit" || input == "list"
-      puts "Sorry - I don't understand. Please enter '1', '2', '3', or 'exit':"
+      puts "Sorry - I don't understand. Please enter '1', '2', '3', '4', or 'exit':"
       input = gets.chomp
     end
 
@@ -75,7 +75,7 @@ class Knitpickr::Controller
     input = gets.chomp
 
     until input.to_i != 0 || input == "exit" || input == "list"
-      puts "Sorry - I don't understand. Please enter '1', '2', '3', or 'exit':"
+      puts "Sorry - I don't understand. Please enter '1', '2', '3', '4', or 'exit':"
       input = gets.chomp
     end
 
@@ -114,7 +114,7 @@ class Knitpickr::Controller
     input = gets.chomp
 
     until input.to_i != 0 || input == "exit" || input == "list"
-      puts "Sorry - I don't understand. Please enter '1', '2', '3', or 'exit':"
+      puts "Sorry - I don't understand. Please enter '1', '2', '3', '4', or 'exit':"
       input = gets.chomp
     end
 
@@ -153,7 +153,7 @@ class Knitpickr::Controller
     input = gets.chomp
 
     until input.to_i != 0 || input == "exit" || input == "list"
-      puts "Sorry - I don't understand. Please enter '1', '2', '3', or 'exit':"
+      puts "Sorry - I don't understand. Please enter '1', '2', '3', '4', or 'exit':"
       input = gets.chomp
     end
 
