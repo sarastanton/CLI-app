@@ -26,9 +26,9 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir        = "bin"
-  spec.executables   = "knitpickr"
-  spec.require_paths = ["lib"]
+  # spec.bindir        = "bin"
+  spec.executables   = ["knitpickr"]
+  spec.require_paths = ["lib", "lib/knitpickr"]
   spec.version       = Knitpickr::VERSION
   spec.name          = "knitpickr"
 
