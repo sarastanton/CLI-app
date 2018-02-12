@@ -2,7 +2,4 @@
 
 require_relative '../lib/knitpickr.rb'
 
-module Knitpickr
-end
-
 Knitpickr::Controller.greeting
